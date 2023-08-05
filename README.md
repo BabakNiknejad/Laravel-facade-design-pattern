@@ -29,9 +29,9 @@
 الگوی طراحی Facade اجازه می دهد تا از سیستم بدون نیاز به دانستن جزئیات داخلی آن استفاده کنید.
 
 ### برای مثال
-1. یک پوشه جدید به نام `Services` در پوشه پروژه خود ایجاد کنید.
-2. یک کلاس جدید به نام `UserService` در پوشه `Services` ایجاد کنید.
-3. در پوشه `provider` کلاس `AppServiceProvider` مند `()register` سرویس user-facade به کلاس UserService متصل می کنیم.
+1. یک پوشه جدید به نام Services در پوشه پروژه خود ایجاد کنید.
+2. یک کلاس جدید به نام UserService در پوشه Services ایجاد کنید.
+3. در پوشه provider کلاس AppServiceProvider مند ()register سرویس user-facade به کلاس UserService متصل می کنیم.
 این بدان معناست که هر بار که کد لاراولی به user-facade اشاره
 می کند، Laravel به طور خودکار سرویس UserService را بارگذاری و تزریق می کند.
 ```
@@ -39,8 +39,8 @@
             return new UserService();
         });
 ```
-4. یک پوشه جدید به نام `Facades` در پوشه پروژه خود ایجاد کنید.
-5. یک کلاس جدید به نام `.UserFacade` در پوشه `Facades` ایجاد کنید.
+4. یک پوشه جدید به نام Facades در پوشه پروژه خود ایجاد کنید.
+5. یک کلاس جدید به نام UserFacade در پوشه Facades ایجاد کنید.
 ```
 <?php
 
@@ -56,15 +56,11 @@ class UserFacade extends Facade
     }
 }
 ```
-متد `()getFacadeAccessor` در کلاس `UserFacade` نام مستعار سرویسی را که `UserFacade` به آن اشاره می کند، برمی گرداند.
-  در این مورد، نام مستعار سرویس `user-facade` است.
+متد ()getFacadeAccessor در کلاس UserFacade نام مستعار سرویسی را که UserFacade به آن اشاره می کند، برمی گرداند.
+  در این مورد، نام مستعار سرویس user-facade است.
 
-6. یک کنترلر به نام `UsersController` ایجاد کنید
-7. یک مسیر جدید به نام `/users` به فایل `api.php` اضافه کنید.
-
-
-حتما. در اینجا متن در قالب Markdown آورده شده است:
-
+6. یک کنترلر به نام UsersController ایجاد کنید
+7. یک مسیر جدید به نام /users به فایل api.php اضافه کنید.
 
 ## استفاده از الگوی طراحی فساد
 
